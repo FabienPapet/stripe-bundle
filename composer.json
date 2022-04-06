@@ -1,0 +1,37 @@
+{
+    "name": "fpt/stripe-bundle",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Fpt\\StripeBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Fpt\\StripeBundle\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Fabien Papet",
+            "email": "fabien.papet@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "symfony/framework-bundle": "^6.0",
+        "symfony/http-client": "^6.0",
+        "stripe/stripe-php": "v7.121.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "vimeo/psalm": "^4.17",
+        "symfony/browser-kit": "^5.4|^6.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true
+        }
+    }
+}
