@@ -20,7 +20,7 @@ class FptStripeExtension extends Extension
 
     private function build(ContainerBuilder $container, array $config): void
     {
-        $container->setParameter('fpt_stripe.credentials.public_key', $config['credentials']['public_key']);
+        $container->setParameter('fpt_stripe.credentials.publishable_key', $config['credentials']['publishable_key']);
         $container->setParameter('fpt_stripe.credentials.secret_key', $config['credentials']['secret_key']);
         $container->setParameter('fpt_stripe.credentials.webhook_signature_key', $config['credentials']['webhook_signature_key']);
     }

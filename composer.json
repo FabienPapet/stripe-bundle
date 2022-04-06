@@ -1,5 +1,6 @@
 {
     "name": "fpt/stripe-bundle",
+    "description": "Stripe bundle for Symfony 6",
     "type": "symfony-bundle",
     "license": "MIT",
     "autoload": {

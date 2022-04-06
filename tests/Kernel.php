@@ -30,7 +30,7 @@ class Kernel extends KernelAlias
 
             $container->loadFromExtension('fpt_stripe', [
                 'credentials' => [
-                    'public_key' => 'test',
+                    'publishable_key' => 'test',
                     'secret_key' => 'test',
                     'webhook_signature_key' => 'test',
                 ],

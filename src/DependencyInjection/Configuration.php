@@ -14,7 +14,7 @@ class Configuration implements ConfigurationInterface
             ->children()
                 ->arrayNode('credentials')
                     ->children()
-                        ->scalarNode('public_key')->isRequired()->end()
+                        ->scalarNode('publishable_key')->isRequired()->end()
                         ->scalarNode('secret_key')->isRequired()->end()
                         ->scalarNode('webhook_signature_key')->end()
                     ->end()

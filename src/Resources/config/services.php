@@ -31,7 +31,7 @@ return static function (ContainerConfigurator $container) {
             param('fpt_stripe.credentials.secret_key'),
         ])
         ->set(Credentials::class)
-        ->args([param('fpt_stripe.credentials.public_key'), param('fpt_stripe.credentials.secret_key')])
+        ->args([param('fpt_stripe.credentials.publishable_key'), param('fpt_stripe.credentials.secret_key')])
 
         ->set(WebhookDispatcherInterface::class, EventWebhookDispatcher::class)
         ->autowire()
