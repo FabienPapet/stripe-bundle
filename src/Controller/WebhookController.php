@@ -28,9 +28,14 @@ final class WebhookController
                 $this->webhookSignature
             );
 
-            $this->webhookDispatcher->dispatch(new StripeWebhook($event));
+            $webhookEvent = new StripeWebhook($event);
+            $this->webhookDispatcher->dispatch($webhookEvent);
         } catch (UnexpectedValueException|SignatureVerificationException) {
             throw new BadRequestHttpException();
+        }
+
+        if ($webhookEvent->hasResponse()) {
+            return $webhookEvent->getResponse();
         }
 
         return new Response(status: Response::HTTP_NO_CONTENT);

@@ -3,9 +3,12 @@
 namespace Fpt\StripeBundle\Event;
 
 use Stripe\Event;
+use Symfony\Component\HttpFoundation\Response;
 
-class StripeWebhook
+class StripeWebhook extends \Symfony\Contracts\EventDispatcher\Event
 {
+    private ?Response $response = null;
+
     public function __construct(
         protected Event $stripeObject
     ) {
@@ -19,5 +22,20 @@ class StripeWebhook
     public function getType(): string
     {
         return $this->stripeObject->type;
+    }
+
+    public function getResponse(): ?Response
+    {
+        return $this->response;
+    }
+
+    public function hasResponse(): bool
+    {
+        return null !== $this->response;
+    }
+
+    public function setResponse(?Response $response): void
+    {
+        $this->response = $response;
     }
 }
