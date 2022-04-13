@@ -51,3 +51,4 @@
 # Embedded web-server pid file
 /.web-server-pid
 .phpunit/
+composer.lock
