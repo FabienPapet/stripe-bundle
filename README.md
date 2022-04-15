@@ -23,7 +23,7 @@ Installation is automated via Symfony flex, if you don't use flex or want to ins
 ## Documentation
 
 - [Manual installation](docs/manual_installation.md)
-- [Webhooks as Symfony Events](docs/webhooks_as_symfony_events)
+- [Webhooks as Symfony Events](docs/webhooks_as_symfony_events.md)
 
 ## Support - Contributing
 
