@@ -2,7 +2,7 @@
 
 ## Description
 
-This bundle helps integrating stripe in your Symfony application.
+This bundle helps stripe integration in your Symfony application.
 
 For now it allows you to:
 
@@ -16,28 +16,16 @@ For now it allows you to:
 
 ## Installation
 
+Installation is automated via Symfony flex, if you don't use flex or want to install manually the bundle, please go to the [Manual installation](./docs/manual_installation.md) section of the documentation.
+
 `composer require fpt/stripe-bundle`
 
-### Configuration
+## Documentation
 
-You can install the bundle by adding a `stripe.yaml` configuration file in your `config/packages` directory. If you
-need to use webhooks, you will also need to copy the routing configuration
+- [Manual installation](docs/manual_installation.md)
+- [Webhooks as Symfony Events](docs/webhooks_as_symfony_events)
 
-```yaml
-# config/packages/Stripe.yaml
-fpt_stripe:
-    credentials:
-        publishable_key: "%env(STRIPE_PUBLISHABLE_KEY)%"
-        secret_key: "%env(STRIPE_SECRET_KEY)%"
-        webhook_signature_key: "%env(STRIPE_WEBHOOK_SIGNATURE_KEY)%"
-```
+## Support - Contributing
 
-### Routing
-
-```yaml
-# routes/stripe.yaml
-stripe_webhooks:
-  resource: "@FptStripeBundle/Resources/config/routes.php"
-```
-
-## Usage
+- Feel free to open any issue about a missing feature or if you find a bug in this bundle. 
+- Contributions are welcome and encouraged.
