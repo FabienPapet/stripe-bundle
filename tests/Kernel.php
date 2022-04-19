@@ -2,7 +2,7 @@
 
 namespace Fpt\StripeBundle\Tests;
 
-use Fpt\StripeBundle\StripeBundle;
+use Fpt\StripeBundle\FptStripeBundle;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Config\Loader\LoaderInterface;
@@ -17,7 +17,7 @@ class Kernel extends KernelAlias
     {
         return [
             new FrameworkBundle(),
-            new StripeBundle(),
+            new FptStripeBundle(),
         ];
     }
 

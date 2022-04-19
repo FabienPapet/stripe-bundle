@@ -52,3 +52,4 @@
 /.web-server-pid
 .phpunit/
 composer.lock
+var/

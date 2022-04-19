@@ -2,7 +2,7 @@
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd"
          bootstrap="vendor/autoload.php"
-         cacheResultFile=".phpunit.cache/test-results"
+         cacheResultFile="var/.phpunit.cache/test-results"
          executionOrder="depends,defects"
          convertDeprecationsToExceptions="true"
          verbose="true"
@@ -14,7 +14,7 @@ testdox="true">
     </testsuites>
 
     <php>
-        <server name="KERNEL_CLASS" value="FabienPapet\StripeCashierBundle\Tests\Kernel" />
+        <server name="KERNEL_CLASS" value="Fpt\StripeBundle\Tests\Kernel" />
     </php>
 
     <coverage cacheDirectory=".phpunit.cache/code-coverage"
