@@ -24,6 +24,7 @@ Installation is automated via Symfony flex, if you don't use flex or want to ins
 
 - [Manual installation](docs/manual_installation.md)
 - [Webhooks as Symfony Events](docs/webhooks_as_symfony_events.md)
+- [Webhook testing with symfony functional tests](docs/testing_webhooks.md)
 
 ## Support - Contributing
 
