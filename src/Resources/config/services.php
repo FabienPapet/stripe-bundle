@@ -4,7 +4,7 @@ use Fpt\StripeBundle\Controller\WebhookController;
 use Fpt\StripeBundle\Credentials;
 use Fpt\StripeBundle\Webhook\EventWebhookDispatcher;
 use Fpt\StripeBundle\Webhook\WebhookDispatcherInterface;
-use Fpt\StripeBundle\WebhookSignature;
+use Fpt\StripeBundle\Webhook\WebhookSignatureCheckerInterface;
 use Stripe\StripeClient;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use function Symfony\Component\DependencyInjection\Loader\Configurator\param;
@@ -22,6 +22,7 @@ return static function (ContainerConfigurator $container) {
             ->public()
             ->args([
                 service(WebhookDispatcherInterface::class),
+                service(WebhookSignatureCheckerInterface::class),
                 param('fpt_stripe.credentials.webhook_signature_key'),
             ])
             ->tag('controller.service_arguments')
