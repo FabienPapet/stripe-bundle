@@ -1,0 +1,46 @@
+name: PHPUnit
+
+on:
+    push:
+    pull_request:
+
+defaults:
+    run:
+        shell: bash
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+    cancel-in-progress: true
+
+jobs:
+
+    tests:
+        name: Tests
+
+        env:
+            extensions: amqp,apcu,igbinary,intl,mbstring,memcached,redis-5.3.4
+
+        strategy:
+            matrix:
+                include:
+                    - php: '8.0'
+                    - php: '8.1'
+            fail-fast: false
+
+        runs-on: ubuntu-20.04
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+            - name: Setup PHP with PECL extension
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: ${{ matrix.php }}
+                  extensions: imagick, swoole, curl
+            -   uses: php-actions/composer@v5
+                with:
+                  php_version: ${{ matrix.php }}
+            - name: PHPUnit tests
+              uses: php-actions/phpunit@v3
+              with:
+                  php_version: ${{ matrix.php }}

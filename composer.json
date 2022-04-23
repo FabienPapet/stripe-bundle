@@ -21,6 +21,7 @@
     ],
     "require": {
         "php": "^8.0",
+        "ext-curl": "*",
         "symfony/framework-bundle": "^5.4|^6.0",
         "symfony/http-client": "^5.4|^6.0",
         "stripe/stripe-php": "^v7.121.0"
