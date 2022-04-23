@@ -29,7 +29,8 @@
         "phpunit/phpunit": "^9.5",
         "vimeo/psalm": "^4.17",
         "symfony/browser-kit": "^5.4|^6.0",
-        "friendsofphp/php-cs-fixer": "v3.8.0"
+        "friendsofphp/php-cs-fixer": "v3.8.0",
+        "twig/twig": "^3"
     },
     "config": {
         "allow-plugins": {
