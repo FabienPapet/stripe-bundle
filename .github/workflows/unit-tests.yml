@@ -45,4 +45,5 @@ jobs:
                   extensions: imagick, swoole, curl
             - name: PHPUnit tests
               uses: php-actions/phpunit@v3
-              php_version: ${{ matrix.php }}
+              with:
+                  php_version: ${{ matrix.php }}
