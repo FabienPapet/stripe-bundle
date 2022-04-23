@@ -43,6 +43,7 @@ jobs:
               with:
                   php-version: ${{ matrix.php }}
                   extensions: imagick, swoole, curl
+            -   uses: php-actions/composer@v5
             - name: PHPUnit tests
               uses: php-actions/phpunit@v3
               with:
