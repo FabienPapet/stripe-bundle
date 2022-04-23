@@ -37,6 +37,11 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v3
+            - name: Setup PHP with PECL extension
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: ${{ matrix.php }}
+                  extensions: imagick, swoole, curl
             - uses: php-actions/composer@v5
             - name: PHPUnit tests
               uses: php-actions/phpunit@v3
