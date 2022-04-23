@@ -23,12 +23,13 @@ jobs:
         strategy:
             matrix:
                 include:
+                    - php: '8.0'
                     - php: '8.1'
-                    - php: '8.1'
-                      mode: high-deps
-                    - php: '8.1'
-                      mode: low-deps
-                    - php: '8.2'
+#                    - php: '8.1'
+#                      mode: high-deps
+#                    - php: '8.1'
+#                      mode: low-deps
+#                    - php: '8.2'
                         #mode: experimental
             fail-fast: false
 
@@ -42,6 +43,6 @@ jobs:
               with:
                   php-version: ${{ matrix.php }}
                   extensions: imagick, swoole, curl
-            - uses: php-actions/composer@v5
             - name: PHPUnit tests
               uses: php-actions/phpunit@v3
+              php_version: ${{ matrix.php }}
