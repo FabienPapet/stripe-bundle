@@ -13,7 +13,7 @@ class TwigCompilerPass implements CompilerPassInterface
     {
         if ($container->hasDefinition('twig')) {
             $extension = new Definition(StripeExtension::class, [
-                'stripePublishableKey', $container->getParameter('fpt_stripe.credentials.publishable_key')
+                'stripePublishableKey', $container->getParameter('fpt_stripe.credentials.publishable_key'),
             ]);
             $extension->addTag('twig.extension');
 
