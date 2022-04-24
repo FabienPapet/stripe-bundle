@@ -2,8 +2,6 @@
 
 $finder = (new PhpCsFixer\Finder())
     ->in(__DIR__)
-    ->exclude('var')
-    ->exclude('node_modules')
 ;
 
 return (new PhpCsFixer\Config())
@@ -19,5 +17,5 @@ return (new PhpCsFixer\Config())
     ])
     ->setRiskyAllowed(true)
     ->setFinder($finder)
-    ->setCacheFile(__DIR__.'/var/.php_cs.cache')
+    ->setCacheFile(__DIR__.'/.php_cs.cache')
 ;
