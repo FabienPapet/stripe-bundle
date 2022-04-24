@@ -15,7 +15,7 @@ class StripeExtension extends AbstractExtension
     public function getFunctions(): array
     {
         return [
-            new TwigFunction('get_stripe_publishable_key', [$this, 'getStripePublishableKey'])
+            new TwigFunction('get_stripe_publishable_key', [$this, 'getStripePublishableKey']),
         ];
     }
 
