@@ -36,6 +36,7 @@ final class WebhookController
         }
 
         if ($webhookEvent->hasResponse()) {
+            /** @var Response */
             return $webhookEvent->getResponse();
         }
 
