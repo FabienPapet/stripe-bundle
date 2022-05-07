@@ -8,10 +8,16 @@ use Stripe\WebhookSignature;
 
 class WebhookSignatureChecker implements WebhookSignatureCheckerInterface
 {
-    public function checkSignature(string $payload, string $signatureHeader, string $secret, int $tolerance): void
+    public function __construct(
+        protected string $webhookSecret,
+        protected ?int $tolerance = null
+    ) {
+    }
+
+    public function checkSignature(string $payload, string $signatureHeader): void
     {
         try {
-            WebhookSignature::verifyHeader($payload, $signatureHeader, $secret, $tolerance);
+            WebhookSignature::verifyHeader($payload, $signatureHeader, $this->webhookSecret, $this->tolerance);
         } catch (SignatureVerificationException $exception) {
             throw new WebhookSignatureException($exception);
         }

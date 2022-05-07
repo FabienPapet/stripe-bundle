@@ -32,7 +32,9 @@ class FptStripeExtension extends Extension
         $enableSignature = (bool) $config['webhook']['check_signature'];
 
         if ($enableSignature) {
-            $definition = new Definition(WebhookSignatureChecker::class);
+            $definition = new Definition(WebhookSignatureChecker::class, [
+                '$webhookSecret' => $container->getParameter('fpt_stripe.credentials.webhook_signature_key')
+            ]);
         } else {
             $definition = new Definition(NullSignatureChecker::class);
         }

@@ -9,5 +9,5 @@ interface WebhookSignatureCheckerInterface
     /**
      * @throws WebhookSignatureException
      */
-    public function checkSignature(string $payload, string $signatureHeader, string $secret, int $tolerance): void;
+    public function checkSignature(string $payload, string $signatureHeader): void;
 }

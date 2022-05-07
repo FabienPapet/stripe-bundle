@@ -10,7 +10,7 @@ class NullSignatureCheckerTest extends TestCase
     public function testDoesNothing(): void
     {
         $signatureChecker = new NullSignatureChecker();
-        $signatureChecker->checkSignature('some payload', 'signature', 'secret', 1);
+        $signatureChecker->checkSignature('some payload', 'signature');
 
         self::assertTrue(true);
     }

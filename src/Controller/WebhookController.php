@@ -16,7 +16,6 @@ final class WebhookController
     public function __construct(
         private WebhookDispatcherInterface $webhookDispatcher,
         private WebhookSignatureCheckerInterface $signatureChecker,
-        private string $webhookSignature
     ) {
     }
 
@@ -25,7 +24,8 @@ final class WebhookController
         try {
             $content = (string) $request->getContent();
             $header = (string) $request->headers->get('STRIPE_SIGNATURE', '');
-            $this->signatureChecker->checkSignature($content, $header, $this->webhookSignature, 300);
+
+            $this->signatureChecker->checkSignature($content, $header);
 
             $event = Event::constructFrom(\json_decode($content, true, 512, JSON_THROW_ON_ERROR));
 

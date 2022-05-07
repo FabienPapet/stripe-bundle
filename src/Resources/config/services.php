@@ -23,7 +23,6 @@ return static function (ContainerConfigurator $container) {
             ->args([
                 service(WebhookDispatcherInterface::class),
                 service(WebhookSignatureCheckerInterface::class),
-                param('fpt_stripe.credentials.webhook_signature_key'),
             ])
             ->tag('controller.service_arguments')
         ->set(StripeClient::class)
