@@ -22,18 +22,18 @@ class FptStripeExtension extends Extension
         $this->build($container, $config);
     }
 
-    private function build(ContainerBuilder $container, array $config): void
+    public function build(ContainerBuilder $container, array $config): void
     {
         $container->setParameter('fpt_stripe.credentials.publishable_key', $config['credentials']['publishable_key']);
         $container->setParameter('fpt_stripe.credentials.secret_key', $config['credentials']['secret_key']);
-        $container->setParameter('fpt_stripe.credentials.webhook_signature_key', $config['credentials']['webhook_signature_key']);
+        $container->setParameter('fpt_stripe.webhook.signature_key', $config['webhook']['signature_key']);
         $container->setParameter('fpt_stripe.webhook.check_signature', $config['webhook']['check_signature']);
 
         $enableSignature = (bool) $config['webhook']['check_signature'];
 
         if ($enableSignature) {
             $definition = new Definition(WebhookSignatureChecker::class, [
-                '$webhookSecret' => $container->getParameter('fpt_stripe.credentials.webhook_signature_key')
+                '$webhookSecret' => $container->getParameter('fpt_stripe.webhook.signature_key'),
             ]);
         } else {
             $definition = new Definition(NullSignatureChecker::class);

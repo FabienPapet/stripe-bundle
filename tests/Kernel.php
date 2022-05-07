@@ -32,8 +32,10 @@ class Kernel extends KernelAlias
                 'credentials' => [
                     'publishable_key' => 'test',
                     'secret_key' => 'test',
-                    'webhook_signature_key' => 'test',
                 ],
+                'webhook' => [
+                    'signature_key' => 'test',
+                ]
             ]);
         });
     }

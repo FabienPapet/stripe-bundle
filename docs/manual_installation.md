@@ -11,7 +11,9 @@ fpt_stripe:
     credentials:
         publishable_key: "%env(STRIPE_PUBLISHABLE_KEY)%"
         secret_key: "%env(STRIPE_SECRET_KEY)%"
-        webhook_signature_key: "%env(STRIPE_WEBHOOK_SIGNATURE_KEY)%"
+    webhook:
+        check_signature: true
+        signature_key: "%env(STRIPE_WEBHOOK_SIGNATURE_KEY)%"
 ```
 
 ## Routing
