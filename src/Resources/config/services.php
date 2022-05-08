@@ -1,7 +1,6 @@
 <?php
 
 use Fpt\StripeBundle\Controller\WebhookController;
-use Fpt\StripeBundle\Credentials;
 use Fpt\StripeBundle\Webhook\EventWebhookDispatcher;
 use Fpt\StripeBundle\Webhook\WebhookDispatcherInterface;
 use Fpt\StripeBundle\Webhook\WebhookSignatureCheckerInterface;
@@ -30,8 +29,6 @@ return static function (ContainerConfigurator $container) {
         ->args([
             param('fpt_stripe.credentials.secret_key'),
         ])
-        ->set(Credentials::class)
-        ->args([param('fpt_stripe.credentials.publishable_key'), param('fpt_stripe.credentials.secret_key')])
 
         ->set(WebhookDispatcherInterface::class, EventWebhookDispatcher::class)
         ->autowire()
