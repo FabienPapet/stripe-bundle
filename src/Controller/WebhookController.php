@@ -34,23 +34,22 @@ final class WebhookController
             $event = Event::constructFrom(\json_decode($content, true, 512, JSON_THROW_ON_ERROR));
             $this->logger?->info('Stripe event handled', [
                 'event_id' => $event->id,
-                'event_type' => $event->type
+                'event_type' => $event->type,
             ]);
 
             $webhookEvent = new StripeWebhook($event);
             $this->webhookDispatcher->dispatch($webhookEvent);
-
         } catch (JsonException $e) {
             $this->logger?->error('Failed to decode JSON data', [
                 'exception' => $e->getMessage(),
-                'json' => $content
+                'json' => $content,
             ]);
 
             throw new BadRequestHttpException();
         } catch (WebhookSignatureException $e) {
             $this->logger?->error('Failed to handle webhook', [
                 'exception' => $e->getMessage(),
-                'json' => $content
+                'json' => $content,
             ]);
 
             throw new BadRequestHttpException();
