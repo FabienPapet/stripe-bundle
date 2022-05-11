@@ -22,6 +22,7 @@ return static function (ContainerConfigurator $container) {
             ->args([
                 service(WebhookDispatcherInterface::class),
                 service(WebhookSignatureCheckerInterface::class),
+                service('logger')->nullOnInvalid(),
             ])
             ->tag('controller.service_arguments')
         ->set(StripeClient::class)
