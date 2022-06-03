@@ -3,6 +3,13 @@
     "description": "Stripe bundle for Symfony 5.4 / 6",
     "type": "symfony-bundle",
     "license": "MIT",
+    "keywords": [
+        "php",
+        "bundle",
+        "symfony",
+        "stripe",
+        "webhook"
+    ],
     "autoload": {
         "psr-4": {
             "Fpt\\StripeBundle\\": "src/"
@@ -31,7 +38,7 @@
         "vimeo/psalm": "^4.17",
         "symfony/browser-kit": "^5.4|^6.0",
         "friendsofphp/php-cs-fixer": "v3.8.0",
-        "twig/twig": "^3"
+        "twig/twig": "^v3.4.1"
     },
     "config": {
         "allow-plugins": {
