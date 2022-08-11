@@ -6,14 +6,15 @@ use Fpt\StripeBundle\Webhook\WebhookDispatcherInterface;
 use Fpt\StripeBundle\Webhook\WebhookSignatureCheckerInterface;
 use Stripe\StripeClient;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+
 use function Symfony\Component\DependencyInjection\Loader\Configurator\param;
 use function Symfony\Component\DependencyInjection\Loader\Configurator\service;
 
 return static function (ContainerConfigurator $container) {
     $container->services()
         ->defaults()
-            ->autowire(true)
-            ->autoconfigure(true)
+            ->autowire()
+            ->autoconfigure()
     ;
 
     $container->services()
