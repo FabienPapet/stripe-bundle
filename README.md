@@ -1,3 +1,11 @@
+[![Version](http://poser.pugx.org/fpt/stripe-bundle/version)](https://packagist.org/packages/fpt/stripe-bundle)
+[![PHP Version Require](http://poser.pugx.org/fpt/stripe-bundle/require/php)](https://packagist.org/packages/fpt/stripe-bundle)
+![PHPUnit](https://github.com/FabienPapet/stripe-bundle/actions/workflows/unit-tests.yml/badge.svg)
+![PHPStan](https://img.shields.io/badge/PHPStan-level%209-brightgreen.svg?style=flat)
+![CS](https://github.com/FabienPapet/stripe-bundle/actions/workflows/code_style.yml/badge.svg)
+[![License](http://poser.pugx.org/fpt/stripe-bundle/license)](https://packagist.org/packages/FabienPapet/stripe-bundle)
+[![Latest Unstable Version](http://poser.pugx.org/fpt/stripe-bundle/v/unstable)](https://packagist.org/packages/fpt/stripe-bundle)
+
 # Stripe Bundle for Symfony
 
 ## Description

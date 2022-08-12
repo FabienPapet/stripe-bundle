@@ -10,6 +10,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder(): TreeBuilder
     {
         $tree = new TreeBuilder('fpt_stripe');
+        /** @phpstan-ignore-next-line */
         $tree->getRootNode()
             ->children()
                 ->arrayNode('credentials')

@@ -31,7 +31,7 @@ final class WebhookController
 
             $this->logger?->info('Signature verification complete');
 
-            $event = Event::constructFrom(\json_decode($content, true, 512, JSON_THROW_ON_ERROR));
+            $event = Event::constructFrom((array) \json_decode($content, true, 512, JSON_THROW_ON_ERROR));
             $this->logger?->info('Stripe event handled', [
                 'event_id' => $event->id,
                 'event_type' => $event->type,
