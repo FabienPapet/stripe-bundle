@@ -40,6 +40,9 @@ jobs:
             -   uses: php-actions/composer@v5
                 with:
                   php_version: ${{ matrix.php }}
+            - uses: php-actions/phpstan@v3
+              with:
+                configuration: phpstan.neon
             - name: PHPUnit tests
               uses: php-actions/phpunit@v3
               with:
