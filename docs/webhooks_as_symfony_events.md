@@ -41,7 +41,7 @@ class StripeEventSubscriber implements EventSubscriberInterface
         ];
     }
 
-    public function onSubscriptionUpdated(StripeWebhook $webhook): void
+    public function onSubscriptionCreated(StripeWebhook $webhook): void
     {
         /** @var \Stripe\Event $stripeEvent */
         $stripeEvent = $webhook->getStripeObject();
