@@ -31,7 +31,7 @@ class StripeWebhook extends \Symfony\Contracts\EventDispatcher\Event
 
     public function hasResponse(): bool
     {
-        return null !== $this->response;
+        return $this->response instanceof Response;
     }
 
     public function setResponse(?Response $response): void

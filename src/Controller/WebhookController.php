@@ -6,7 +6,6 @@ use Fpt\StripeBundle\Event\StripeWebhook;
 use Fpt\StripeBundle\Exception\WebhookSignatureException;
 use Fpt\StripeBundle\Webhook\WebhookDispatcherInterface;
 use Fpt\StripeBundle\Webhook\WebhookSignatureCheckerInterface;
-use JsonException;
 use Psr\Log\LoggerInterface;
 use Stripe\Event;
 use Symfony\Component\HttpFoundation\Request;
@@ -39,7 +38,7 @@ final class WebhookController
 
             $webhookEvent = new StripeWebhook($event);
             $this->webhookDispatcher->dispatch($webhookEvent);
-        } catch (JsonException $e) {
+        } catch (\JsonException $e) {
             $this->logger?->error('Failed to decode JSON data', [
                 'exception' => $e->getMessage(),
                 'json' => $content,
@@ -55,11 +54,6 @@ final class WebhookController
             throw new BadRequestHttpException();
         }
 
-        if ($webhookEvent->hasResponse()) {
-            /** @var Response */
-            return $webhookEvent->getResponse();
-        }
-
-        return new Response(status: Response::HTTP_NO_CONTENT);
+        return $webhookEvent->getResponse() ?? new Response(status: Response::HTTP_NO_CONTENT);
     }
 }
