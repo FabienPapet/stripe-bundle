@@ -3,7 +3,6 @@
 ![PHPUnit](https://github.com/FabienPapet/stripe-bundle/actions/workflows/php.yml/badge.svg)
 ![PHPStan](https://img.shields.io/badge/PHPStan-level%209-brightgreen.svg?style=flat)
 [![License](http://poser.pugx.org/fpt/stripe-bundle/license)](https://packagist.org/packages/fpt/stripe-bundle)
-[![Latest Unstable Version](http://poser.pugx.org/fpt/stripe-bundle/v/unstable)](https://packagist.org/packages/fpt/stripe-bundle)
 
 # Stripe Bundle for Symfony
 
