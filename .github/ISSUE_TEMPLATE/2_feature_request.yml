@@ -1,0 +1,17 @@
+name: 🚀 Feature Request
+description: Suggest an idea for this project
+labels: [ "Feature" ]
+body:
+  - type: textarea
+    id: solution
+    attributes:
+      label: Describe the solution you'd like
+      description: A clear and concise description of what you'd want to happen.
+    validations:
+      required: true
+  - type: checkboxes
+    attributes:
+      label: Do you plan to work on this feature?
+      description: While optional, helping develop a feature will significantly increase the chances that it is done. Please select all that apply for you.
+      options:
+        - label: I'm willing to submit a Pull Request that implements this feature.

@@ -1,0 +1,25 @@
+name: 🐛 Bug Report
+description: Report an issue in the bundle
+labels: [ "Bug" ]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Describe the bug and add screenshots
+      description: What went wrong? If applicable, add screenshots or screen recordings to help explain your problem.
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior
+      description: Explain what you expected to happen instead.
+    validations:
+      required: false
+  - type: input
+    id: php-version
+    attributes:
+      label: PHP version(s) where the bug happened
+      placeholder: "ex: 8.0, 8.1, 8.2"
+    validations:
+      required: false
