@@ -1,6 +1,6 @@
 {
     "name": "fpt/stripe-bundle",
-    "description": "Stripe bundle for Symfony 5.4 / 6",
+    "description": "Stripe bundle for Symfony 5.4 / 6 / 7",
     "type": "symfony-bundle",
     "license": "MIT",
     "keywords": [
@@ -29,13 +29,13 @@
     "require": {
         "php": "^8.0",
         "ext-curl": "*",
-        "symfony/framework-bundle": "^5.4|^6.0",
-        "symfony/http-client": "^5.4|^6.0",
-        "stripe/stripe-php": "^v7.121.0|^v8.0.0|^v9.0.0|^v10.0.0|^v11.0.0|^v12.0.0"
+        "symfony/framework-bundle": "^5.4|^6.0|^7.0",
+        "symfony/http-client": "^5.4|^6.0|^7.0",
+        "stripe/stripe-php": "^v7.121.0|^v8.0.0|^v9.0.0|^v10.0.0|^v11.0.0|^v12.0.0|^v13.0.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5",
-        "symfony/browser-kit": "^5.4|^6.0",
+        "symfony/browser-kit": "^5.4|^6.0|^7.0",
         "friendsofphp/php-cs-fixer": "^3.9",
         "twig/twig": "^v3.4.1",
         "phpstan/phpstan": "^1.8"
