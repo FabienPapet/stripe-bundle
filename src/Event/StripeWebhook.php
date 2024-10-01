@@ -10,7 +10,7 @@ class StripeWebhook extends \Symfony\Contracts\EventDispatcher\Event
     private ?Response $response = null;
 
     public function __construct(
-        protected Event $stripeObject
+        protected Event $stripeObject,
     ) {
     }
 

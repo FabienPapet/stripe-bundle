@@ -10,7 +10,7 @@ class WebhookSignatureChecker implements WebhookSignatureCheckerInterface
 {
     public function __construct(
         protected string $webhookSecret,
-        protected ?int $tolerance = null
+        protected ?int $tolerance = null,
     ) {
     }
 

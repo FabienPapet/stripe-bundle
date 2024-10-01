@@ -8,7 +8,7 @@ use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 class EventWebhookDispatcher implements WebhookDispatcherInterface
 {
     public function __construct(
-        private EventDispatcherInterface $dispatcher
+        private EventDispatcherInterface $dispatcher,
     ) {
     }
 
